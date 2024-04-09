@@ -1,0 +1,14 @@
+name = "rahat/escrow"
+version = "0.0.0"
+license = "Apache-2.0"
+description = "Aiken contracts for project 'rahat/escrow'"
+
+[repository]
+user = "rahat"
+project = "escrow"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "1.8.0"
+source = "github"

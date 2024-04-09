@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "wallets": "deno run -A ./tests/generate-credentials.ts",
+    "test:deposit": "deno test -A ./tests/Deposit.test.ts",
+    "test:withdraw": "deno test -A ./tests/Withdraw.test.ts"
+  }
+}
