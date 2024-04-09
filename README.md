@@ -1,55 +1,62 @@
-# escrow
+# Mynth Aiken
 
-Write validators in the `validators` folder, and supporting functions in the `lib` folder using `.ak` as a file extension.
+validator that allow the deposit of ada and can only be withdrawn by the depositor
 
-For example, as `validators/always_true.ak`
 
-```gleam
-validator {
-  fn spend(_datum: Data, _redeemer: Data, _context: Data) -> Bool {
-    True
-  }
-}
+## Setup
+ 
+Clone  this repository: 
+```sh 
+git clone https://github.com/youreachedrahat/mynth-assignment
+cd mynth-assignment 
 ```
 
-## Building
+To build aiken smart contract, run following command.
+```sh
+aiken Build
+```
+
+### testing Validator
+You need to have `Blockfrost API`
+```sh
+export BLOCKFROST_API=your_blockfrost_api_key
+```
+
+Generate wallet Credential
+```sh
+Deno task generate-credential.ts
+```
+add test add from `https://docs.cardano.org/cardano-testnets/tools/faucet/` in `depositor.sk`
+
+
+
+
+#### Run Testing
+```sh
+Deno task test:deposit
+```
+to check deposit  functionality
+
 
 ```sh
-aiken build
+Deno task test:withdraw -- <tx Hash>
 ```
+Replace `<tx Hash>` with your withdraw transaction id
 
-## Testing
 
-You can write tests in any module using the `test` keyword. For example:
 
-```gleam
-test foo() {
-  1 + 1 == 2
-}
-```
+# Learning Experience
+the `Datum`, `Redeemer` and `e-utxo` is the key points/components for understanding the cardano ecosystem.
 
-To run all tests, simply do:
+Found this site usefull
 
-```sh
-aiken check
-```
+[Cardano Developer Hub](https://developers.cardano.org/) understanding  the basics of Cardano and its ecosystem
 
-To run only tests matching the string `foo`, do:
+`https://aiken-lang.org/language-tour/*`
+`https://aiken-lang.github.io/stdlib/`
+`https://piefayth.github.io/blog/pages/aiken1/`
+Understanding how AIken works and the basic standard library
 
-```sh
-aiken check -m foo
-```
 
-## Documentation
-
-If you're writing a library, you might want to generate an HTML documentation for it.
-
-Use:
-
-```sh
-aiken docs
-```
-
-## Resources
-
-Find more on the [Aiken's user manual](https://aiken-lang.org).
+`https://docs.deno.com/runtime/manual/basics/testing/`
+How Deno handle testing and different assertions
