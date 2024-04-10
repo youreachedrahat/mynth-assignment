@@ -42,6 +42,7 @@ to check deposit  functionality
 Deno task test:withdraw -- <tx Hash>
 ```
 Replace `<tx Hash>` with your withdraw transaction id
+this will run a withdraw with a imposter address and then through depositor address
 
 
 
