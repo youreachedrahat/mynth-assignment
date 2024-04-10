@@ -26,7 +26,7 @@ Generate wallet Credential
 ```sh
 Deno task wallets
 ```
-add test add from `https://docs.cardano.org/cardano-testnets/tools/faucet/` in `depositor.sk`
+add test add from `https://docs.cardano.org/cardano-testnets/tools/faucet/` in `depositor.addr`
 
 
 
